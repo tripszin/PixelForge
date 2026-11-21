@@ -1,0 +1,9 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.34,<1
+pydantic-settings>=2.7,<3
+numpy>=2.0,<3
+pillow>=11,<14
+tokenizers>=0.21,<1
+safetensors>=0.5,<1
+huggingface_hub>=1,<3
+torch==2.7.1

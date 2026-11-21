@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151515">
+  <title>PixelForge — estúdio pixel art</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="/" aria-label="PixelForge início"><span class="brand-mark">PF</span> PIXELFORGE</a><span class="engine"><i id="engine-dot"></i><span id="engine-status">checando motor</span></span></header>
+    <section class="intro"><p class="eyebrow">ESTÚDIO DE ASSETS PARA JOGOS</p><h1>Suas ideias,<br><em>em pixels.</em></h1><p class="lede">Descreva o que você quer criar. Gere arte para seu jogo e salve o PNG no seu computador.</p></section>
+    <section class="workspace">
+      <form id="generator" class="panel">
+        <label for="prompt">O que vamos criar?</label>
+        <textarea id="prompt" name="prompt" required minlength="2" maxlength="500" placeholder="Ex.: red mushroom with golden spots, fantasy game sprite"></textarea>
+        <div class="settings-row"><div><label for="size">Tamanho do PNG</label><select id="size"><option value="8">256 × 256 pixels</option><option value="16" selected>512 × 512 pixels</option></select></div><div><label for="seed-input">Seed <span class="optional">opcional</span></label><input id="seed-input" type="number" min="0" max="4294967295" step="1" placeholder="Aleatória"></div></div>
+        <label for="style-select">Bíblia visual</label><select id="style-select" class="style-select"><option value="">Sem estilo salvo</option></select>
+        <button id="submit" type="submit"><span>Gerar duas opções</span><span aria-hidden="true">↗</span></button>
+        <p class="hint">O sprite original tem 32 × 32 pixels. O modelo entende melhor descrições curtas em inglês. A geração é local.</p>
+      </form>
+      <section class="preview panel" aria-live="polite"><div class="preview-head"><span>ESCOLHA UMA OPÇÃO</span><span id="seed"></span></div><div id="candidate-area" class="candidate-area"><div class="placeholder"><div class="pixel-icon">✳</div><p>Suas opções aparecem aqui</p><span>Escolha uma para baixar</span></div></div><div id="error" class="error" hidden></div><div class="preview-actions"><button id="new-attempt" type="button" hidden>Gerar novas opções ↻</button><a id="download" class="download" hidden download="pixelforge.png">Baixar selecionada <span>↓</span></a><button id="promote" type="button" hidden>Promover asset <span>★</span></button></div></section>
+    </section>
+    <section class="library panel">
+      <div class="library-column"><h2>Estilos do projeto</h2><p>Salve regras visuais para reutilizar entre sprites.</p><form id="style-form"><label for="style-name">Nome do estilo</label><input id="style-name" maxlength="80" required placeholder="Ex.: fantasia aconchegante"><label for="style-bible">Bíblia visual</label><textarea id="style-bible" maxlength="1000" required placeholder="Ex.: paleta quente limitada, contorno marrom escuro, luz superior esquerda, pixel art 32x32"></textarea><button type="submit">Salvar estilo <span>＋</span></button></form></div>
+      <div class="library-column"><div class="library-title"><div><h2>Assets aprovados</h2><p id="asset-count">Nenhum sprite promovido ainda.</p></div><button id="export-assets" type="button">Exportar para Godot <span>↓</span></button></div><div id="asset-list" class="asset-list"></div><p id="library-message" class="hint" aria-live="polite"></p></div>
+    </section>
+    <footer><span>PIXELFORGE <span class="dim">· MVP 0.4</span></span><span>GERAÇÃO LOCAL · SEUS ARQUIVOS, SUAS REGRAS</span></footer>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>

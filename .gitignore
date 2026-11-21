@@ -1,0 +1,19 @@
+# Ambiente Python e arquivos temporários
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+
+# Segredos locais
+.env
+.env.*
+!.env.example
+
+# Pesos grandes; setup.ps1 baixa novamente durante a instalação
+models/**/*.safetensors
+
+# Banco local, sprites gerados, cache e exportações
+outputs/
+
+# Logs locais do servidor
+work/

@@ -1,0 +1,37 @@
+Pixie
+Copyright 2026 Pixie contributors
+
+This product (source code and the released Pixie model weights, pixie-32 and
+pixie-16) is licensed under the Apache License, Version 2.0. See LICENSE.
+
+-------------------------------------------------------------------------------
+Krea 2 attribution
+-------------------------------------------------------------------------------
+
+The images used to train the Pixie models were generated with Krea 2 Turbo,
+which is made available by Krea under the Krea 2 Community License:
+https://github.com/krea-ai/krea-2/blob/main/docs/KREA-2-COMMUNITY-LICENSE
+
+Those images are Outputs under that license. Per its section 5.3, Outputs are
+owned by the party who generated them, and Krea claims no ownership of them.
+Pixie is a separately designed and separately trained model family (66M-parameter
+autoregressive transformers over palette indices). It contains no Krea weights,
+parameters, or other components of the Krea Model, and no Krea weights are
+distributed with this repository or with the Pixie model files. The Krea
+sheet-generation scripts under data-pipeline/ load Krea 2 weights that you
+download yourself under Krea's own license.
+
+The pixie-16 (16x16) training corpus, Angais/pixel-art-atlas-1.4m
+(https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m, CC0-1.0), was
+also generated with Krea 2 Turbo. It was not used to train pixie-32.
+
+-------------------------------------------------------------------------------
+Third-party components that are not redistributed here
+-------------------------------------------------------------------------------
+
+- CLIP ViT-L/14 text encoder (openai/clip-vit-large-patch14). Pixie uses its
+  text features as a frozen, external input; the weights are not shipped.
+  CLIP is released by OpenAI under the MIT License:
+  https://github.com/openai/CLIP/blob/main/LICENSE
+- Qwen3-VL, Wan 2.1 VAE, and stable-diffusion.cpp, used only by the optional
+  sheet-generation scripts. Their licenses are upstream.

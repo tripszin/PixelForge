@@ -1,0 +1,15 @@
+{
+  "arch": "p32",
+  "d_model": 512,
+  "n_layer": 16,
+  "n_head": 8,
+  "ffn_mult": 4,
+  "dropout": 0.1,
+  "head_mult": 2,
+  "text_len": 18,
+  "n_pal": 3,
+  "style": true,
+  "image_size": 32,
+  "text_encoder": "openai/clip-vit-large-patch14 (text model, first 11 layers)",
+  "palette_file": "palette.npy"
+}
